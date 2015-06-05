@@ -30,7 +30,8 @@
     "proxyquire": "^1.5.0",
     "semver": "^4.3.4",
     "sinon": "^1.14.1",
-    "sinon-chai": "^2.7.0"
+    "sinon-chai": "^2.7.0",
+    "grunt-complexity": "~0.3.0"
   },
   "author": "Simon Emms <simon@simonemms.com>",
   "repository": {

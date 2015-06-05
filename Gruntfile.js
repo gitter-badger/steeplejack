@@ -33,6 +33,13 @@ module.exports = function (grunt) {
                 "./<%= config.build %>"
             ]
         },
+        complexity: {
+            generic: {
+                src: [
+                    "<%= config.src %>/**/*.js"
+                ]
+            }
+        },
         copy: {
             src: {
                 cwd: "./<%= config.src %>",
