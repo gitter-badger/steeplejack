@@ -46,6 +46,26 @@ function defineProperty (obj, name, value) {
 }
 
 
+/**
+ * Set Properties
+ *
+ * Sets the
+ *
+ * @param obj
+ */
+function setProperties (obj) {
+
+    for (var key in obj) {
+        var definition = Object.getOwnPropertyDescriptor(obj, key);
+
+        if (definition === undefined || definition.configurable === true) {
+            defineProperty(obj, key, obj[key]);
+        }
+    }
+
+}
+
+
 function Base () {
 
 
@@ -72,13 +92,7 @@ function Base () {
 
 
     /* Set the properties - ones starting _ are hidden */
-    for (var key in this) {
-        var definition = Object.getOwnPropertyDescriptor(this, key);
-
-        if (definition === undefined || definition.configurable === true) {
-            defineProperty(this, key, this[key]);
-        }
-    }
+    setProperties(this);
 
 
     return this;
