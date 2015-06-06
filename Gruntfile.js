@@ -34,7 +34,7 @@ module.exports = function (grunt) {
             ]
         },
         complexity: {
-            generic: {
+            src: {
                 src: [
                     "<%= config.src %>/**/*.js"
                 ]
@@ -283,7 +283,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask("test", "Perform tests on the codebase", [
         "lint",
-        "unittest"
+        "unittest",
+        "complexity:src"
     ]);
 
     grunt.registerTask("unittest", "Run the unit tests", [
